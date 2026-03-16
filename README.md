@@ -4,10 +4,17 @@ A stateless HTTP web service written in Go. Returns `helloworld` when the client
 
 ## Usage
 
-### Run
+### Run locally
 
 ```bash
 CGO_ENABLED=0 go run .
+```
+
+### Run with Docker
+
+```bash
+docker build -t helloworld .
+docker run -p 8080:8080 helloworld
 ```
 
 ### Request
@@ -26,4 +33,5 @@ curl "localhost:8080/?msg=hello"
 main.go      # Entry point
 server.go    # Server initialization and startup
 handler.go   # HTTP request handlers
+Dockerfile   # Multi-stage Docker build
 ```
